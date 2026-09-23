@@ -89,31 +89,7 @@ export class App {
 
     */
 
-    productes: Producte[] = [
-      this.producte,
-      this.producte2,
-      {
-        id: 3,
-        nom: 'Tauleta',
-        preu: 499,
-        disponible: true,
-        descripcio: 'Tauleta lleugera per estudiar i treballar',
-      },
-      {
-        id: 4,
-        nom: 'Monitor',
-        preu: 249,
-        disponible: true,
-        descripcio: 'Monitor de 27 polzades amb alta resolució',
-      },
-      {
-        id: 5,
-        nom: 'Teclat',
-        preu: 59,
-        disponible: false,
-        descripcio: 'Teclat mecànic amb connexió USB',
-      },
-    ];
+    productes: Producte[] = [this.producte,  this.producte2];
 
       p1 = new ProducteClass('PC', 999, true);
       p2 = new ProducteClass('Portàtil', 1299, false);
@@ -139,11 +115,6 @@ export class App {
     // 2. Metode descompte() i mostreu el descompte per consola 
     // 3  creeu un nou producte i mostreu el descompte per consola
     //4. cerqueu la manera de mostrar el descompte amb un popup
-
-    
-
-    
-
 
 
 
@@ -193,18 +164,6 @@ export class App {
       }
 
     ]
-
-    getActius(): Gelat[] {
-      return this.gelats.filter((gelat: Gelat) => gelat.disponible);
-    }
-
-    findById(id: number): Gelat | undefined {
-      return this.gelats.find((gelat: Gelat) => gelat.id === id);
-    }
-
-    formatarElement(element: Gelat): string {
-      return `ID: ${element.id}, Nom: ${element.nom}, Preu: ${element.preu}, Disponible: ${element.disponible}, Sabor: ${element.sabor}, Descripció: ${element.descripcio ?? ''}`;
-    }   
 
     
 
