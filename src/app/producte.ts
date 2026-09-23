@@ -3,17 +3,19 @@ export class Producte {
     nom: string;
     preu: number;
     disponible: boolean;
+    descripcio?: string;
 
-    constructor(nom: string, preu: number, disponible: boolean) {
+    constructor(nom: string, preu: number, disponible: boolean, descripcio?: string) {
         this.nom = nom;
         this.preu = preu;
         this.disponible = disponible;
+        this.descripcio = descripcio;
     }
 
     // metode normal
     // cometes accentuades per a fer interpolació de variables
     toString(): string {
-        return `Nom: ${this.nom}, Preu: ${this.preu}, Disponible: ${this.disponible}`;
+        return `Nom: ${this.nom}, Preu: ${this.preu}, Disponible: ${this.disponible}, Descripció: ${this.descripcio}`;
     }
 
      //getter i setter
@@ -25,9 +27,13 @@ export class Producte {
         this.preu = preu / 1.21;
     }
 
+    getDescripcio(): string {
+        return this.descripcio || '';
+    }
 
-
-    
+    setDescripcio(descripcio: string): void {
+        this.descripcio = descripcio;
+    }    
 
     getNom(): string {
         return this.nom;
