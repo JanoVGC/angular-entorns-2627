@@ -194,17 +194,6 @@ export class App {
 
     ]
 
-    getActius(): Gelat[] {
-      return this.gelats.filter((gelat: Gelat) => gelat.disponible);
-    }
-
-    findById(id: number): Gelat | undefined {
-      return this.gelats.find((gelat: Gelat) => gelat.id === id);
-    }
-
-    formatarElement(element: Gelat): string {
-      return `ID: ${element.id}, Nom: ${element.nom}, Preu: ${element.preu}, Disponible: ${element.disponible}, Sabor: ${element.sabor}, Descripció: ${element.descripcio ?? ''}`;
-    }   
 
     
 
