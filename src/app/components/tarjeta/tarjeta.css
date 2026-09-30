@@ -1,0 +1,23 @@
+/* Aquest fitxer conte els estils encapsulats on nomes afecten a aquest component 
+.titol (app.css) --> OK, NO HI HA CONFLICTE SI S'UTILITZA EL MATEIX D'UN ALTRE CSS  */ 
+
+.tarjeta {
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 16px;
+    margin: 8px;
+    width: 250px;
+    display: inline-block;
+}
+
+h2 {
+    color: #1f1f1f;
+    font-size: 1.1rem;
+
+}
+
+
+/* COM MOTRO AQUEST COMPONENT*/
+
+
+

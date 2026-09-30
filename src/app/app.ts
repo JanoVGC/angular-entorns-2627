@@ -5,11 +5,12 @@ import { Producte as ProducteClass } from './producte'; // importem la classe Pr
 import { Gelat } from './models/gelats';
 import { Funcions } from './funcions';
 import { Alumne } from './alumne';
-
+import { Tarjeta } from './components/tarjeta/tarjeta';
+import { Perfil } from './components/perfil/perfil';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet],
+  imports: [RouterOutlet , Tarjeta , Perfil],
   templateUrl: './app.html',
   styleUrl: './app.css'
 })
