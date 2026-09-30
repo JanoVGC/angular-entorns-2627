@@ -55,7 +55,7 @@ export class App {
   // TypeScript infereix el tipus automàticament.
   ciutat = 'Lleida';
   codiP = 25605;
-
+/*
   // Objecte que compleix la interfície Producte.
   producte: Producte = {
     id: 1,
@@ -90,6 +90,8 @@ export class App {
 
     */
 
+    /*
+
     productes: Producte[] = [
       this.producte,
       this.producte2,
@@ -116,6 +118,9 @@ export class App {
       },
     ];
 
+    */
+    
+
       p1 = new ProducteClass('PC', 999, true);
       p2 = new ProducteClass('Portàtil', 1299, false);
 
@@ -135,6 +140,8 @@ export class App {
       console.log(alumne2.presentar());
       console.log(alumne2.haAprobat);
     }
+
+
 
     // 1. afegiu un metode a la classe producte descripcio que retorni un string amb nom i preu.
     // 2. Metode descompte() i mostreu el descompte per consola 
