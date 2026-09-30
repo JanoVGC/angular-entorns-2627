@@ -1,10 +1,13 @@
 import { Component, signal } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { Producte } from './interfaces/producte'; //PER PODER USAR LA iterface DE TIPUS Producte s'ha d'importar
+import { Producte as ProducteClass } from './producte'; //Importem la classe PRODUCTE ASSIGANT UN ALIAS
+import { Tarjeta } from './components/tarjeta/tarjeta';
+import { Perfil } from './components/perfil/perfil';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet],
+  imports: [RouterOutlet, Tarjeta, Perfil],
   templateUrl: './app.html',
   styleUrl: './app.css'
 })
@@ -55,6 +58,30 @@ export class App {
       preu : 999,
       disponible : true
     };
+
+    producte2: Producte = {
+      id: 2,
+      nom: 'Ivan',
+      preu: 5,
+      disponible : false
+    }
+
+    productes: Producte[] = [this.producte, this.producte2]; 
+
+    p1 = new ProducteClass('Teclat', 89.99);
+    
+    constructor(){
+        console.log(this.p1.toSting());
+        console.log(this.p1.preuAmbIva());
+        console.log(this.p1.toSting());
+    }
+
+    //1. AFEGIU UN MÈTODE A LA CLASSE PRODUCTE descripcio() que retorni un string amb nom i preu
+    //2. MÈTODE descompte() que retorni el preu amb un 10% de rebaixa
+    //3. creeu un nou producte i mostreu el descompte per consola
+    //4. cerqueu la manera de mostrar el descompte amb un popup
+  
+
 
     
 }
