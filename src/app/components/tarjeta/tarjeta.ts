@@ -39,6 +39,14 @@ export class Tarjeta {
       return this.producte.preu * 1.21
     }
 
+    // Getter2: estat de disponibilitat en text
+    get estatDisponibilitat(): string{
+      const estoc = this.producte.estoc ?? 0;
+      if (estoc === 0) return 'Esgotat';
+      if (estoc < 3) return 'Ultimes unitats';
+      return 'Disponible'; 
+    }
+
 }
   /* interpolacio de dades
   Permet conectar les dades del TS a l'html 
