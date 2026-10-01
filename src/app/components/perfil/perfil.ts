@@ -1,4 +1,7 @@
 import { Component } from '@angular/core';
+import { Alex } from '../../interfaces/alex';
+
+
 
 @Component({
   selector: 'app-perfil',
@@ -7,7 +10,12 @@ import { Component } from '@angular/core';
   styleUrl: './perfil.css',
 })
 export class Perfil {
-  
+  alex: Alex = {
+    nom: 'Alex',
+    cognom: 'Alias',
+    edat: 21,
+    cicle: 'DAW',
+  };
 }
   /* interpolacio de dades
   Permet conectar les dades del TS a l'html 
@@ -17,8 +25,6 @@ export class Perfil {
   {{2 + 3}} --> mostra 5
   {{text.toUpperCase()}} --> mostra el text amb majuscules
   {{edat >= 18 ? 'Major d\ 'edat' : Menor d\ 'edat}} --> operador ternari
-
-
 
 */
 

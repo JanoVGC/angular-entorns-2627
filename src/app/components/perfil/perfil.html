@@ -1,3 +1,5 @@
+<!---
+
 <p>perfil works!</p>
 
 
@@ -34,3 +36,13 @@ Zungangishiyi lana
 
 </div>
 
+-->
+
+
+<div class="perfil">
+    <h2> Nom complert: {{alex.nom.toUpperCase()}} {{alex.cognom.toUpperCase()}}</h2>
+    <p class="edat"> Edat: {{alex.edat}} </p>
+    <p> Any de naixement: {{2026 - alex.edat}} </p>
+    <p>{{alex.edat >= 18 ? 'Major d\' edat' : 'Menor d\' edat'}}</p>
+    <p class="cicle"> Cicle: {{alex.cicle}} </p>
+</div>
