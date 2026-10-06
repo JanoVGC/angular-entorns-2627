@@ -1,10 +1,61 @@
 <!-- app.html -->
 <h2> El meu catàleg</h2> 
+
+<!--SENSE FOR -- REPETITIU-->
 <app-tarjeta />
 <app-tarjeta />
 <app-tarjeta />
 
+<!-- AMB FOR UNA SOLA LINIA AMB TANTS ELEMENTS-->
+ 
+<!---->
+ @for (producte of productes; track producte.id) {
+    <app-tarjeta/>
+ }
+
+
+ 
+@for (ciutat of ciutats; track ciutat) {
+    <p> {{ciutat}} </p>
+}
+    
+
+ <!-- index es una variable especial que conte la posicio de l'element comencça per 0 --> 
+@for (ciutat of ciutats; track ciutat; let i = $index) {
+   <p>{{i+1}}. {{ciutat}}</p>
+}
+
+<!-- @empty -->
+@for (ciutat of ciutats; track ciutat){
+    <p> {{ciutat}} </p>
+
+} @empty {
+    <p> No hi ha ciutats</p>
+}
+
+
+
+@for (producte of productes; track producte.id; let i = $index) {
+    <p>{{i+1}}. {{producte.nom}} </p>
+    <app-tarjeta/>
+} @empty {
+    <p>No hi ha productes</p>
+}
+
+
 <app-perfil/>
 <app-perfil/>
+
+
+<!-- crea un array de minim 5 elements al app.ts
+ usa @for per msotrar els elements de l'array
+ $index per mostrar l'ordre-->
+
+ @for (element of elements; track element; let i = $index) {
+    <p>{{i+1}}. {{element}}</p>
+    <app-tarjeta/>
+ } @empty {
+    <p>No hi ha elements</p>
+ }
 
 <router-outlet />

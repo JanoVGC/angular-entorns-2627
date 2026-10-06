@@ -35,6 +35,8 @@ export class App {
     --> Argument of type 'number' is not assignable to parameter of type 'string'.
     */
 
+    /*
+
     //TIPUS BASICS
     nom: string = 'Angular';
     nom2: string = 'Laravel';
@@ -76,12 +78,36 @@ export class App {
         console.log(this.p1.toSting());
     }
 
+  
+
     //1. AFEGIU UN MÈTODE A LA CLASSE PRODUCTE descripcio() que retorni un string amb nom i preu
     //2. MÈTODE descompte() que retorni el preu amb un 10% de rebaixa
     //3. creeu un nou producte i mostreu el descompte per consola
     //4. cerqueu la manera de mostrar el descompte amb un popup
   
 
-
+    */
+    ciutats: string[] = ['Barcelona', 'Lleida', 'Girona', 'Tarragona'];
     
+  
+
+    productes: Producte[] = [{
+      id: 1,
+      nom: 'teclat',
+      preu: 89.99,
+      estoc: 12,
+      categoria: 'periferics',
+      disponible: true
+    },
+    {
+      id: 2,
+      nom: 'monitor',
+      preu: 358,
+      estoc: 3,
+      categoria: 'pantalles',
+      disponible: true
+    }
+  ];
+
+  elements: string[] = ['element 1', 'element 2', 'element 3', 'element 4', 'element 5'];
 }
