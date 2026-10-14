@@ -3,5 +3,26 @@
 <div class="tarjeta">
     <h2> Ordinador gamer pro</h2>
     <p> Preu : 1299€</p>
-    <p> Disponible</p>
+    <p> Estoc : {{producte.estoc}}</p>
+
+    @if (producte.estoc > 0) {
+        <p>{{estatDisponibilitat}}</p>
+    }
+
+    
+</div>
+
+<div class="tarjeta">
+    <h2>{{<producteXif.nom}}/h2>
+        <p class = "categoria"> {{producteXif.categoria}}</p>
+        <p class = "preu"> € (+IVA): {{preuAmbIva}}</p>
+        <p></p>
+
+        <button (click) = "toggleDesc()">
+            {{mostrarDesc ? 'TANCAR' : 'VEURE'}}
+        </button>
+
+        @if (mostrarDesc) {
+            <p>{{producteXif.descripcio}}</p>
+        }
 </div>
