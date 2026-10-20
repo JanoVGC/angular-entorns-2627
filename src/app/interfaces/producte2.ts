@@ -1,11 +1,10 @@
 export interface Producte2 {
-id: number;
+    id: number;
     nom: string;
     preu: number;
-    estoc: number;
-    categoria: string;
-    disponible: boolean;
-    descripcio ?: string; //el ? vol dir que és obcional
+    estoc : number;
+    categoria : string;
+    descripcio: string;
 
 
 }
