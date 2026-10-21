@@ -1,14 +1,15 @@
-import { Component, signal } from '@angular/core';
+import { Component, importProvidersFrom, signal } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { Producte } from './interfaces/producte'; //PER PODER USAR LA iterface DE TIPUS Producte s'ha d'importar
 import { Producte as ProducteClass } from './producte'; //Importem la classe PRODUCTE ASSIGANT UN ALIAS
 import { Tarjeta } from './components/tarjeta/tarjeta';
 import { Perfil } from './components/perfil/perfil';
 import { Info } from './components/info/info';
+import { Botiga } from './bindings/botiga/botiga';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, Tarjeta, Perfil, Info],
+  imports: [RouterOutlet, Tarjeta, Perfil, Info, Botiga],
   templateUrl: './app.html',
   styleUrl: './app.css'
 })
