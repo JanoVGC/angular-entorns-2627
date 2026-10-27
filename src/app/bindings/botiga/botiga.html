@@ -44,7 +44,7 @@
                 <h2> {{p.nom}}</h2>
                 <p class="preu"
                     [style.color]="p.preu>500 ? '#C0000' : 'blue'"> {{p.preu}}</p>
-                <button class="btn-compra" [disabled]="!toEstoc(p)"> Afegir al carrito</button>
+                <button class="btn-compra" [disabled]="!toEstoc(p)" (click)="afegir(p)"> Afegir al carrito</button>
             </article>
             
         }
