@@ -14,6 +14,7 @@ export class Botiga {
   productes: ProducteLab[] = PRODUCTES_LAB;
   modeCompacte = false; 
   carret: number[] = [];
+  afegitAlCarret = false; 
 
   // metode per veure que hi tenim al carrito
 
@@ -41,16 +42,13 @@ export class Botiga {
   urlFitxa(p:ProducteLab): string {
     return `https://botiga.cat/producte/${p.id}`;
   }
-
-  afegir(p: ProducteLab): void {
-    if (this.toEstoc(p)) {
-      this.carret.push(p.id);
+  
+  afegir(): boolean {
+    return this.afegitAlCarret = true; 
+   
     }
   }
 
-  veureCarrito(p:ProducteLab): void {
-    
-  }
 
 
 
@@ -62,4 +60,5 @@ export class Botiga {
 
 
 
-}
+
+
