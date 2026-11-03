@@ -14,7 +14,9 @@ export class Botiga {
   productes: ProducteLab[] = PRODUCTES_LAB;
   modeCompacte = false; 
   carret: number[] = [];
-  afegitAlCarret = false; 
+  cerca = '';
+  
+  
 
   // metode per veure que hi tenim al carrito
 
@@ -22,10 +24,7 @@ export class Botiga {
     return p.estoc > 0; 
   }
 
-  producteDestacat (p:ProducteLab): boolean {
-    return p.preu>500;
-
-  }
+ 
 
   classesFitxa (p:ProducteLab): string {
     const classes = ['fitxa'];
@@ -43,11 +42,44 @@ export class Botiga {
     return `https://botiga.cat/producte/${p.id}`;
   }
   
-  afegir(): boolean {
-    return this.afegitAlCarret = true; 
+  afegir(p: ProducteLab): void {
+    if (this.toEstoc(p)) {
+      this.carret.push(p.id);
    
     }
   }
+
+  alCarret (p: ProducteLab): boolean {
+    return this.carret.includes(p.id);
+  }
+
+  treure(p: ProducteLab): void {
+    this.carret = this.carret.filter(id => id !== p.id);
+  }
+
+  get totalCarret(): number {
+    return this.productes.filter(p=> this.alCarret(p)) // es queda amb els productes que hi ha al carret
+    .reduce((total, p) => total + p.preu, 0); // reduce suma els seus preus començant per 0
+  }
+
+  onCerca (event: Event): void {
+    this.cerca = (event.target as HTMLInputElement).value; 
+  }
+
+  get productesVisibles(): ProducteLab[] {
+    const text = this.cerca.trim().toLowerCase();
+    return this.productes.filter(p => p.nom.toLowerCase().includes(text));
+  }
+
+
+
+
+
+  
+
+
+
+}
 
 
 
