@@ -3,7 +3,12 @@
     <input type="search" placeholder="Cerca producte" (input)="onCerca($event)" />
 
     @for (p of productesVisibles; track p.id) {
-       ....
+       <app-fitxa-producte 
+       [producte] = "p" 
+       [enCarret] = "alCarret(p)">
+       (afegir)="afegir($event)"
+       (treure)="treure($event)"
+       </app-fitxa-producte>
     } @empty {
         <p class="buit">No s'han trobat productes amb el text "{{cerca}}"</p>
 
@@ -19,21 +24,7 @@
     <div class="graella">
         
           @for (p of productes; track p.id) {
-                <article
-                  class="fitxa"
-                  [class.destacat]="p.preu > 500"
-                  [class.oferta]="p.preu < 50"
-                  [class.esgotat]="p.estoc === 0"
-                  [class.al-carret]="alCarret(p)">
-                <img [src]="imatgeSegura(p)" [alt]="p.nom" class="imatge"/>
-                <h2> {{p.nom}}</h2>
-                <p class="preu" [style.color] = "p.preu > 500 ? '#C0000' : '#1F4E79'"> {{p.preu}}</p>
-                <button  class="btn-compra" [disabled]="!toEstoc(p)"(click)="afegir(p)"> Afegir al carrito</button>
-                <a [href] = "urlFitxa(p)" [title]="'Fitxa de' + p.nom">Veure fitxa producte</a>
-                <button class="treure" (click)="treure(p)" [disabled]="!alCarret(p)">Treure del carret</button>
-
-            </article>
-            
+                
         }
     
     </div>

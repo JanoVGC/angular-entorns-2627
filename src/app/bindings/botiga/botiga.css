@@ -1,10 +1,4 @@
-.esgotat{
-    color: red; 
-}
 
-.oferta{
-   text-decoration: underline;
-}
 
 .graella {
     display: flex; 
@@ -14,33 +8,4 @@
 
 }
 
- .fitxa {
-    width: 240px;
-    border: 1px solid #ddd;
-    border-radius: 8px; 
-    padding: 12px; 
-
-    
-}
-
-.imatge {
-    width: 100%; 
-
-}
-
-.al-carret{
-    border: 2px solid #70AD47;
-     background: #f0fff0;
-}
-
-.compacte .fitxa {
-    display: none; 
-}
-
-.compacte .imatge {
-    display: none;
-}
-
-.confirmat {
-    border: 2px solid #70AD47; background: #f0fff0;
-}
+ 
